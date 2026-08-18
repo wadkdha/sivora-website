@@ -1,10 +1,10 @@
 import Link from "next/link";
+import { ShowcaseCard } from "@/components/showcase/ShowcaseCard";
+import { getFeaturedShowcases } from "@/content/showcases";
 
-/**
- * 首页案例预览区块。
- * 第一阶段暂用占位卡片，待 content/showcases 数据模型完成后接入真实案例。
- */
 export function ShowcasePreview() {
+  const items = getFeaturedShowcases();
+
   return (
     <section className="mx-auto max-w-(--container-max) px-6 py-24">
       <div className="flex items-end justify-between">
@@ -23,16 +23,8 @@ export function ShowcasePreview() {
       </div>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-3">
-        {[1, 2, 3].map((placeholder) => (
-          <div
-            key={placeholder}
-            className="rounded-2xl border border-border bg-surface p-8"
-          >
-            <div className="h-32 rounded-lg bg-surface-muted" />
-            <p className="mt-6 text-sm font-medium text-muted">
-              案例内容开发中
-            </p>
-          </div>
+        {items.map((item) => (
+          <ShowcaseCard key={item.slug} item={item} />
         ))}
       </div>
     </section>
