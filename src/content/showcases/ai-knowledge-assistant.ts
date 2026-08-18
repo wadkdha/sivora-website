@@ -57,9 +57,21 @@ export const aiKnowledgeAssistant: ShowcaseCase = {
     description:
       "以下为模拟测算下的预期价值，并非真实客户数据；实际效果取决于企业文档质量、组织规模与员工使用频率。",
     metrics: [
-      { label: "预期查找耗时", value: "较人工搜索缩短，示例范围 30%–60%" },
-      { label: "预期同事打断次数", value: "示例范围降低 40%–70%" },
-      { label: "覆盖场景", value: "制度类、产品类、操作类问答（模拟测算）" },
+      {
+        label: "预期查找耗时",
+        value: "较人工搜索缩短，示例范围 30%–60%",
+        type: "estimated",
+      },
+      {
+        label: "预期同事打断次数",
+        value: "示例范围降低 40%–70%",
+        type: "estimated",
+      },
+      {
+        label: "覆盖场景",
+        value: "制度类、产品类、操作类问答（模拟测算）",
+        type: "estimated",
+      },
     ],
   },
 };

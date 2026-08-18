@@ -15,6 +15,11 @@ export type AIModelName = "GPT" | "Claude" | (string & {});
 export interface ShowcaseMetric {
   label: string;
   value: string;
+  /**
+   * "estimated"：模拟测算，Demo / 模拟案例只能使用这一类型。
+   * "observed"：真实项目且有实际数据依据时才可使用。
+   */
+  type: "estimated" | "observed";
 }
 
 export interface ShowcaseProblem {
